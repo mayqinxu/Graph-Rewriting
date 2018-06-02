@@ -1,6 +1,10 @@
 # AA18_Project_Bootstrap
 算分2018小班课赵海燕老师班课程项目
 
+## Update
+一个比较蠢的实现，直接运行run.py即可
+要改运行的问题的实例需要直接去main函数里面改 23333
+
 ## 项目结构
 - `examlpes`：问题集合
   - `sokoban_game`：推箱子游戏示例
