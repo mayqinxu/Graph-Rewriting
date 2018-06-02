@@ -30,22 +30,39 @@ r4 = [0.0006020069122314453,
   0.06779789924621582,
   0.4062821865081787,
   4.137807130813599,
-  17.337783098220825
+  17.337783098220825,
+  128.44795107841492
   ]
 
 # 5 rods
-r5 = [0.001432180404663086,
-0.014850139617919922,
-0.32713794708251953,
-0.3571019172668457,
-16.378541946411133]
+r5 = [0.0010380744934082031,
+0.032792091369628906,
+0.23134589195251465,
+1.503561019897461,
+13.9340500831604,
+55.442832946777344,
+1276.048327922821
+]
 
+# 3rod
+ctrl = [0.0003,
+0.0002,
+0.0002,
+0.0005,
+0.0007,
+0.0015,
+0.0022,
+0.0032,
+0.0052
+]
 plt.plot(range(1,10), r2, '.-', label='2 rods')
 plt.plot(range(1,10), r3, '.-', label='3 rods')
-plt.plot(range(1,7), r4, '.-', label='4 rods')
-plt.plot(range(1,6), r5, '.-', label='5 rods')
+plt.plot(range(1,8), r4, '.-', label='4 rods')
+plt.plot(range(1,8), r5, '.-', label='5 rods')
+plt.plot(range(1,10), ctrl, '*-', label='classic Algorithm (3 rods)')
 plt.ylabel('time/s')
 plt.xlabel('Disk Number')
 plt.yscale('log')
+plt.title('Execution time of different Hanoi instance')
 plt.legend(loc = 'upper left')
 plt.show()

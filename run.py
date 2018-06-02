@@ -336,7 +336,7 @@ if __name__ == '__main__':
     dir_name = 'examples/Hanoi'
     goal_json = open(dir_name + '/goal.json').read()
     rules_json = open(dir_name + '/rules.json').read()
-    instance_json = open(dir_name + '/instances/' + '5disks_5rods.json').read()
+    instance_json = open(dir_name + '/instances/' + '7disks_4rods.json').read()
 
     # 读取 goal.json 文件
     goal = json.loads(goal_json)
