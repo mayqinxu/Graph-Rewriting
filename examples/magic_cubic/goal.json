@@ -1,0 +1,47 @@
+{
+  "graph": { },
+  "nacs": [
+    {
+      "objects": [
+        {
+          "id": "center",
+          "type": "Center"
+        },
+        {
+          "id": "tile",
+          "type": "Tile"
+        },
+        {
+          "id": "color_1",
+          "type": "Color"
+        },
+        {
+          "id": "color_2",
+          "type": "Color"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_is_color",
+          "source": "tile",
+          "target": "color_1"
+        },
+        {
+          "type": "center_is_color",
+          "source": "center",
+          "target": "color_2"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "tile",
+          "target": "center"
+        },
+        {
+          "type": "color_isnot_color",
+          "source": "color_1",
+          "target": "color_2"
+        }
+      ]
+    }
+  ]
+}

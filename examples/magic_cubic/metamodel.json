@@ -1,0 +1,95 @@
+{
+  "classes": [
+    {
+      "id": "Tile"
+    },
+    {
+      "id": "Color"
+    },
+    {
+      "id": "Center"
+    }
+  ],
+  "relations": [
+    {
+      "id": "tile_is_color",
+      "name": "is",
+      "source": "Tile",
+      "target": "Color"
+    },
+    {
+      "id": "tile_topleft_cent",
+      "name": "topleft",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_top_cent",
+      "name": "top",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_topright_cent",
+      "name": "topright",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_left_cent",
+      "name": "left",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_right_cent",
+      "name": "right",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_bottomleft_cent",
+      "name": "bottomleft",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_bottom_cent",
+      "name": "bottom",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "tile_bottomright_cent",
+      "name": "bottomright",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "center_is_color",
+      "name": "is",
+      "source": "Center",
+      "target": "Color"
+    },
+    {
+      "id": "left_of",
+      "source": "Center",
+      "target": "Center"
+    },
+    {
+      "id": "top_of",
+      "source": "Center",
+      "target": "Center"
+    },
+    {
+      "id": "tile_near_cent",
+      "source": "Tile",
+      "target": "Center"
+    },
+    {
+      "id": "color_isnot_color",
+      "source": "Color",
+      "target": "Color"
+    }
+  ]
+}

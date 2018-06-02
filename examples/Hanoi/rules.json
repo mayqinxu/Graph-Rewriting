@@ -1,0 +1,269 @@
+[{
+  "id": "move_disk_above_disk_to_empty_rod",
+  "lhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "below_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_rod",
+      "type": "Rod"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "target_disk",
+      "target": "below_disk"
+    }]
+  },
+  "rhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_rod",
+      "type": "Rod"
+    }, {
+      "id": "below_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_rod",
+      "source": "target_disk",
+      "target": "target_rod"
+    }]
+  },
+  "nacs": [{
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "another_disk",
+      "target": "target_disk"
+    }]
+  }, {
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_rod",
+      "type": "Rod"
+    }],
+    "relations": [{
+      "type": "disk_on_rod",
+      "source": "another_disk",
+      "target": "target_rod"
+    }]
+  }]
+}, {
+  "id": "move_disk_above_disk_to_nonempty_rod",
+  "lhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "below_disk",
+      "type": "Disk"
+    }, {
+      "id": "dest_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "target_disk",
+      "target": "below_disk"
+    }, {
+      "type": "disk_is_smaller_than",
+      "source": "target_disk",
+      "target": "dest_disk"
+    }]
+  },
+  "rhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "dest_disk",
+      "type": "Disk"
+    }, {
+      "id": "below_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "target_disk",
+      "target": "dest_disk"
+    }, {
+      "type": "disk_is_smaller_than",
+      "source": "target_disk",
+      "target": "dest_disk"
+    }]
+  },
+  "nacs": [{
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "another_disk",
+      "target": "target_disk"
+    }]
+  }, {
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "dest_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "another_disk",
+      "target": "dest_disk"
+    }]
+  }]
+}, {
+  "id": "move_disk_on_empty_rod_to_empty_rod",
+  "lhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "current_rod",
+      "type": "Rod"
+    }, {
+      "id": "target_rod",
+      "type": "Rod"
+    }],
+    "relations": [{
+      "type": "disk_on_rod",
+      "source": "target_disk",
+      "target": "current_rod"
+    }]
+  },
+  "rhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_rod",
+      "type": "Rod"
+    }, {
+      "id": "current_rod",
+      "type": "Rod"
+    }],
+    "relations": [{
+      "type": "disk_on_rod",
+      "source": "target_disk",
+      "target": "target_rod"
+    }]
+  },
+  "nacs": [{
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "another_disk",
+      "target": "target_disk"
+    }]
+  }, {
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_rod",
+      "type": "Rod"
+    }],
+    "relations": [{
+      "type": "disk_on_rod",
+      "source": "another_disk",
+      "target": "target_rod"
+    }]
+  }]
+}, {
+  "id": "move_disk_from_empty_rod_to_nonempty_rod",
+  "lhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "current_rod",
+      "type": "Rod"
+    }, {
+      "id": "dest_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_rod",
+      "source": "target_disk",
+      "target": "current_rod"
+    }, {
+      "type": "disk_is_smaller_than",
+      "source": "target_disk",
+      "target": "dest_disk"
+    }]
+  },
+  "rhs": {
+    "objects": [{
+      "id": "target_disk",
+      "type": "Disk"
+    }, {
+      "id": "dest_disk",
+      "type": "Disk"
+    }, {
+      "id": "current_rod",
+      "type": "Rod"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "target_disk",
+      "target": "dest_disk"
+    }, {
+      "type": "disk_is_smaller_than",
+      "source": "target_disk",
+      "target": "dest_disk"
+    }]
+  },
+  "nacs": [{
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "target_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "another_disk",
+      "target": "target_disk"
+    }]
+  }, {
+    "objects": [{
+      "id": "another_disk",
+      "type": "Disk"
+    }, {
+      "id": "dest_disk",
+      "type": "Disk"
+    }],
+    "relations": [{
+      "type": "disk_on_disk",
+      "source": "another_disk",
+      "target": "dest_disk"
+    }]
+  }]
+}]

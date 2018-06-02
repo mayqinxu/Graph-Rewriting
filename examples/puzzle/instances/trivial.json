@@ -1,0 +1,65 @@
+{
+  "objects": [{
+    "id": "pieces_1",
+    "type": "Pieces"
+  }, {
+"id": "pieces_2",
+"type": "Pieces"
+  }, {
+"id": "pieces_3",
+"type": "Pieces"
+  }, {
+    "id": "map_1",
+    "type": "Map"
+  },  {
+"id": "map_2",
+"type": "Map"
+  }, {
+"id": "map_3",
+"type": "Map"
+  },  {
+"id": "map_4",
+"type": "Map"
+  }],
+  "relations": [{
+    "type": "Pieces_on_Map",
+    "source": "pieces_1",
+    "target": "map_4"
+  },{
+"type": "Pieces_on_Map",
+"source": "pieces_2",
+"target": "map_1"
+  }, {
+"type": "Pieces_on_Map",
+"source": "pieces_3",
+"target": "map_2"
+  }, {
+"type": "Pieces_match_Map",
+"source": "pieces_1",
+"target": "map_1"
+  }, {
+"type": "Pieces_match_Map",
+"source": "pieces_2",
+"target": "map_2"
+  }, {
+"type": "Pieces_match_Map",
+"source": "pieces_3",
+"target": "map_3"
+  }, {
+    "type": "left_of",
+    "source": "map_1",
+    "target": "map_2"
+  }, {
+"type": "left_of",
+"source": "map_3",
+"target": "map_4"
+  },  {
+"type": "top_of",
+"source": "map_1",
+"target": "map_3"
+  },  {
+"type": "top_of",
+"source": "map_2",
+"target": "map_4"
+  }]
+}

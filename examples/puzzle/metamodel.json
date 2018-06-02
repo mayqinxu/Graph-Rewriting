@@ -1,0 +1,27 @@
+{
+  "classes": [{
+    "id": "Pieces"
+  },{
+    "id": "Map"
+  }],
+
+  "relations": [{
+    "id": "Pieces_on_Map",
+    "name": "on",
+    "source": "Pieces",
+    "target": "Map"
+  }, {
+    "id": "Pieces_match_Map",
+    "name": "match",
+    "source": "Pieces",
+    "target": "Map"
+  },{
+    "id": "left_of",
+    "source": "Map",
+    "target": "Map"
+  }, {
+    "id": "top_of",
+    "source": "Map",
+    "target": "Map"
+  }]
+}

@@ -1,0 +1,3987 @@
+[
+  {
+    "id": "left_turn",
+    "lhs": {
+      "objects": [
+        {
+          "id": "infront_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "up_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_left_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_right_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "infront_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "up_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "back_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "down_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "left_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "left_right_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "left_left_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "left_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        }
+      ]
+    },
+    "rhs": {
+      "objects": [
+        {
+          "id": "infront_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "up_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_left_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_right_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "infront_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "infront_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "up_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "up_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "up_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "back_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "back_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "back_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "down_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "down_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "down_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "left_right_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "left_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "left_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "left_left_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        }
+      ]
+    },
+    "nacs": []
+  },
+  {
+    "id": "right_turn",
+    "lhs": {
+      "objects": [
+        {
+          "id": "infront_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "up_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_right_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_left_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "infront_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "up_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "back_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "down_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "right_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "right_left_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "right_right_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "right_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        }
+      ]
+    },
+    "rhs": {
+      "objects": [
+        {
+          "id": "infront_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "up_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_left_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_right_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "infront_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "infront_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "infront_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "up_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "up_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "up_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "back_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "back_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "back_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "down_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "down_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "right_left_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "right_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "right_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "right_right_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        }
+      ]
+    },
+    "nacs": []
+  },
+  {
+    "id": "top_turn",
+    "lhs": {
+      "objects": [
+        {
+          "id": "infront_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "up_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_top_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottom_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "infront_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "right_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "back_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "left_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "up_top_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "up_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "up_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "up_bottom_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        }
+      ]
+    },
+    "rhs": {
+      "objects": [
+        {
+          "id": "infront_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "up_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_top_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottom_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "infront_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "infront_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "infront_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "right_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "right_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "right_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "back_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "back_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "back_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "left_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "left_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "left_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "up_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "up_top_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "up_bottom_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "up_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        }
+      ]
+    },
+    "nacs": []
+  },
+  {
+    "id": "bottom_turn",
+    "lhs": {
+      "objects": [
+        {
+          "id": "infront_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_top_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottom_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "infront_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "right_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "left_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "down_top_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "down_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "down_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "down_bottom_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        }
+      ]
+    },
+    "rhs": {
+      "objects": [
+        {
+          "id": "infront_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_top_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottom_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "infront_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "infront_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "right_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "right_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "back_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "left_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "left_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "left_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "down_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "down_bottom_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "down_top_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "down_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        }
+      ]
+    },
+    "nacs": []
+  },
+  {
+    "id": "infront_turn",
+    "lhs": {
+      "objects": [
+        {
+          "id": "up_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "infront_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottom_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_left_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_top_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_right_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "up_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "up_bottom_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "up_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "right_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "right_left_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "right_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "down_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "down_top_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "down_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "left_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "left_right_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "left_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "infront_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "infront_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "infront_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "infront_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        }
+      ]
+    },
+    "rhs": {
+      "objects": [
+        {
+          "id": "up_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "infront_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_topright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "up_bottomleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "up_bottom_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "up_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "right_topleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "right_left_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "right_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "down_top_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "down_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "left_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "left_right_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "left_bottomright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "infront_bottomleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "infront_left_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "infront_bottom_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "infront_top_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "infront_topleft_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "infront_bottomright_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "infront_right_tile",
+          "target": "infront_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "infront_topright_tile",
+          "target": "infront_center"
+        }
+      ]
+    },
+    "nacs": []
+  },
+  {
+    "id": "back_turn",
+    "lhs": {
+      "objects": [
+        {
+          "id": "up_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_top_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_right_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottom_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_left_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "up_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "up_top_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "up_topright_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "right_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "right_right_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "right_bottomright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "down_bottomleft_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "down_bottom_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "left_topleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "left_left_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "left_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "back_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "back_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "back_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        }
+      ]
+    },
+    "rhs": {
+      "objects": [
+        {
+          "id": "up_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "up_center",
+          "type": "Center"
+        },
+        {
+          "id": "right_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "right_center",
+          "type": "Center"
+        },
+        {
+          "id": "down_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "down_center",
+          "type": "Center"
+        },
+        {
+          "id": "left_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "left_center",
+          "type": "Center"
+        },
+        {
+          "id": "back_topleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_top_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_topright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_left_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_right_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomleft_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottom_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_bottomright_tile",
+          "type": "Tile"
+        },
+        {
+          "id": "back_center",
+          "type": "Center"
+        },
+        {
+          "id": "infront_center",
+          "type": "Center"
+        }
+      ],
+      "relations": [
+        {
+          "type": "tile_near_cent",
+          "source": "up_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "up_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "right_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "down_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "left_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_near_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "left_of",
+          "source": "left_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "left_of",
+          "source": "infront_center",
+          "target": "right_center"
+        },
+        {
+          "type": "top_of",
+          "source": "infront_center",
+          "target": "down_center"
+        },
+        {
+          "type": "top_of",
+          "source": "up_center",
+          "target": "infront_center"
+        },
+        {
+          "type": "top_of",
+          "source": "back_center",
+          "target": "up_center"
+        },
+        {
+          "type": "top_of",
+          "source": "down_center",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "up_topleft_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "up_top_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "up_topright_tile",
+          "target": "right_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "right_topright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "right_right_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "right_bottomright_tile",
+          "target": "down_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "down_bottom_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "down_bottomleft_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "down_bottomright_tile",
+          "target": "left_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "left_bottomleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "left_left_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "left_topleft_tile",
+          "target": "up_center"
+        },
+        {
+          "type": "tile_topleft_cent",
+          "source": "back_bottomleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_top_cent",
+          "source": "back_left_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_left_cent",
+          "source": "back_bottom_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_right_cent",
+          "source": "back_top_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_topright_cent",
+          "source": "back_topleft_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomleft_cent",
+          "source": "back_bottomright_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottom_cent",
+          "source": "back_right_tile",
+          "target": "back_center"
+        },
+        {
+          "type": "tile_bottomright_cent",
+          "source": "back_topright_tile",
+          "target": "back_center"
+        }
+      ]
+    },
+    "nacs": []
+  }
+]

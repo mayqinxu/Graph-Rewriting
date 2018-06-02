@@ -1,0 +1,24 @@
+{
+  "graph": {},
+  "nacs": [{
+    "objects": [{
+      "id": "pieces",
+      "type": "Pieces"
+    }, {
+      "id": "map1",
+      "type": "Map"
+    }, {
+      "id": "map2",
+      "type": "Map"
+    }],
+    "relations": [{
+      "type": "Pieces_on_Map",
+      "source": "pieces",
+      "target": "map1"
+    }, {
+      "type": "Pieces_match_Map",
+      "source": "pieces",
+      "target": "map2"
+    }]
+  }]
+}

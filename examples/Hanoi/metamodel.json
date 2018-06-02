@@ -1,0 +1,30 @@
+{
+  "classes": [{
+    "id": "Rod"
+  }, {
+    "id": "Disk"
+  }, {
+    "id": "Goal_Rod"
+  }], 
+  "relations": [{
+    "id": "disk_on_disk",
+    "name": "on",
+    "source": "Disk",
+    "target": "Disk"
+  }, {
+    "id": "disk_is_smaller_than",
+    "name": "smaller",
+    "source": "Disk",
+    "target": "Disk"
+  }, {
+    "id": "disk_on_rod",
+    "name": "on_rod",
+    "source": "Disk",
+    "target": "Rod"
+  }, {
+    "id": "rod_is_not_goal",
+    "name": "is_not_goal",
+    "source": "Rod",
+    "target": "Goal_Rod"
+  }]
+}

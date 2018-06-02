@@ -1,0 +1,24 @@
+{
+  "graph": {},
+  "nacs": [{
+    "objects": [{
+      "id": "rod_not_goal",
+      "type": "Rod"
+    }, {
+      "id": "disks",
+      "type": "Disk"
+    }, {
+      "id": "goal",
+      "type": "Goal_Rod"
+    }],
+    "relations": [{
+      "type": "rod_is_not_goal",
+      "source": "rod_not_goal",
+      "target": "goal"
+    }, {
+      "type": "disk_on_rod",
+      "source": "disks",
+      "target": "rod_not_goal"
+    }]
+  }]
+}
