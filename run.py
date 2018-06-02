@@ -49,6 +49,7 @@ class Basic_Graph:
             name = relation['type']
             # edges 中的每一条边 edge 都包含了他的名字 和 另一个断点的名字的信息
             self.graph[source]['edges'].append({'name': name, 'to': target})
+    
     def __str__(self):
         # 用于最后打印结果
         string = ''
@@ -88,10 +89,10 @@ class Main_Graph(Basic_Graph):
     def match_goal(self, goal):
         # 如果任意一个 nac 被匹配，就没有成功
         for nac in goal.nacs:
-            if self.match_graph(self.graph, nac.graph) != []:
+            if self.match_graph(self.graph, nac.graph):
                 return False
         # 如果 goal.graph 为空，说明已经达成了goal
-        if goal.graph == {}:
+        if not goal.graph:
             return True
         # 否则需要检查是否满足graph
         return bool(self.match_graph(self.graph, goal.graph))
@@ -102,23 +103,20 @@ class Main_Graph(Basic_Graph):
         # 把所有不满足nacs的可能匹配给保留
         good_matches = []
         for match in matches:
-            flag = 0
+            flag = False
             for nac in rule.nacs:
                 if self.match_nac(match, nac, rule.lhs):
-                    flag = 1
+                    flag = True
                     break
-            if not flag:
+            if flag is False:
                 good_matches.append(match)
         return good_matches
 
     def apply_rule(self, rule, match):
         # 参数中的 match 是一组满足条件的点之间的映射，即从原图 到 lhs 的一个点映射
-        def find_corresponding_v(v, match):
-            # 由lhs中的一个顶点，找到原图中的像
-            # 因为lhs/rhs中的边需要根据 match 中的映射，映回原图进行增删操作，对应的顶点的名字是不一样的，所以需要找到对应的名字
-            for pair in match:
-                if pair[1] == v:
-                    return pair[0]
+        mapping = {}
+        for pair in match:
+            mapping[pair[1]] = pair[0]
 
         for v, info in rule.rhs.graph.items():
             # lhs中没有，但是rhs中有的点，要在原图中新增
@@ -133,7 +131,7 @@ class Main_Graph(Basic_Graph):
             # 查找 lhs 中有，但是 rhs 中没有的元素（点和边）
             if v not in rule.rhs.graph.keys():
                 # 如果 lhs 中有顶点，但是 rhs中没有顶点
-                name = find_corresponding_v(v, match)
+                name = mapping[v]
                 # 删除该节点
                 self.graph.pop(name)
                 continue
@@ -141,16 +139,16 @@ class Main_Graph(Basic_Graph):
             delete_edges = []
             # 寻找要被删掉的边
             for edge in info['edges']:
-                flag = 0
+                flag = False
                 for r_edge in rule.rhs.graph[v]['edges']:
                     if r_edge == edge:
-                        flag = 1
+                        flag = True
                         break
                 # 在lhs中的边 如果在rhs中没找到
-                if not flag:
-                    from_name = find_corresponding_v(v, match)
-                    to_name = find_corresponding_v(edge['to'], match)  
-                    delete_edge = {'name': edge['name'], 'to': find_corresponding_v(edge['to'], match)}
+                if flag is False:
+                    from_name = mapping[v]
+                    to_name =  mapping[edge['to']]
+                    delete_edge = {'name': edge['name'], 'to': to_name}
                     # 删掉在原图中相对应的边
                     self.graph[from_name]['edges'].remove(delete_edge)
 
@@ -159,23 +157,23 @@ class Main_Graph(Basic_Graph):
             if v not in rule.lhs.graph.keys():
                 # 如果有一些点是之前新加的，把它对应的边加上
                 for edge in info['edges']:
-                    from_v = find_corresponding_v(v, match)
-                    to_v = find_corresponding_v(edge['to'], match)
+                    from_v = mapping[v]
+                    to_v = mapping[edge['to']]
                     new_edge = {'name': edge['name'], 'to': to_v}
                     self.graph[from_v]['edges'].append(new_edge)
                 continue
 
             for edge in info['edges']:
                 # 查找 lhs中没有，但是 rhs中有的边
-                flag = 0
+                flag = False
                 for r_edge in rule.lhs.graph[v]['edges']:
                     if r_edge == edge:
-                        flag = 1
+                        flag = True
                         break
                 # 在lhs中的边 如果在rhs中没找到
-                if not flag:
-                    from_v = find_corresponding_v(v, match)
-                    to_v = find_corresponding_v(edge['to'], match)
+                if flag is False:
+                    from_v = mapping[v]
+                    to_v = mapping[edge['to']]
                     new_edge = {'name': edge['name'], 'to': to_v}
                     # 在原图中添加相对应的边
                     self.graph[from_v]['edges'].append(new_edge)
@@ -189,7 +187,6 @@ class Main_Graph(Basic_Graph):
         return bool(res)
     
     def get_subgraph(self, graph, vertexs):
-        # 这个函数没被用到...
         # 求graph限制在 vertexs 顶点集中的子图
         subgraph = {}
         for v, info in graph.items():
@@ -202,37 +199,14 @@ class Main_Graph(Basic_Graph):
         return subgraph
 
     def match_graph(self, graph, pattern_graph, must_match_pairs = set()):
-        # 最需要优化的一步
         # 参数：
         # graph: 待匹配的图
         # pattern_graph: 匹配的模板图，即从graph中，找到所有与pattern_graph同构的子图
         # must_match_pairs: 用于nac的查找，如果nac与lhs中有相同的元素，那么在匹配nac时，
         #                   已经找到的match中的这些元素必须参与匹配，缺省时为空集
-
-        # waiting_list: 经过初步筛选之后的可能的点映射的集合
-        waiting_list = set()
-        for pattern_v, pattern_info in pattern_graph.items():
-            for v, info in graph.items():
-                # 可能的映射: 
-                # 必要条件1: 类型相同 and 必要条件2: 原图的出度>= pattern中的出度 
-                if info['type'] == pattern_info['type'] and len(info['edges']) >= len(pattern_info['edges']):
-                    # 必要条件3: pattern中每一个relation的名字都必须被包含
-                    relation_names = [ e['name'] for e in info['edges']]
-                    flag = 1
-                    for edge in pattern_info['edges']:
-                        if edge['name'] in relation_names:
-                            relation_names.remove(edge['name'] )
-                        else:
-                            flag = 0
-                            break
-                    # v --> pattern_v 是一个可能的映射
-                    if flag == 1:
-                        waiting_list.add((v,pattern_v))
-    
         def check_violate(possible_match):
             # 参数：一个可能的完整的映射，检验它们是否存在冲突
-            # 比如 [(v1 --> pattern_v1), (v3 --> pattern_v2), (v2 --> pattern_v3)]
-
+            # 方法：直接选取子图，然后哈希，与模板比较。
             vs = []
             pvs = []
             for pair in possible_match:
@@ -243,25 +217,44 @@ class Main_Graph(Basic_Graph):
                 # 不能有重复的点, 因为必须是一一对应的
                 return True
 
-            # 对pattern中的每一个顶点，检查它的出边，在相应的原图中是否是存在匹配的。
-            for i in range(len(pvs)):
-                pv = pvs[i]
-                v = vs[i]
-                outedges = pattern_graph[pv]['edges']
-                for edge in outedges:
-                    to_v = vs[pvs.index(edge['to'])]
-                    name = edge['name']
-                    # 去查找原图中有没有对应的这条边
-                    flag = 0
-                    for v_edge in graph[v]['edges']:
-                        if v_edge['name'] == name and v_edge['to'] == to_v:
-                            flag = 1
-                            break   
-                    # 没找到相应的边，说明这个match对应的子图与lhs不匹配   
-                    if flag == 0:
-                        return True  
+            mapping = {}
+            for pair in possible_match:
+                mapping[pair[1]] = pair[0]
+
+            subgraph = self.get_subgraph(self.graph, vs)
+            p_graph = copy.deepcopy(pattern_graph)
+            for pv, pvinfo in p_graph.items():
+                for edge in pvinfo['edges']:
+                    edge['to'] = mapping[edge['to']]
+            # 直接比较子图和模板哈希值是否相等
+            for pv in pvs:
+                v = mapping[pv]
+                vinfo = self.hash_(subgraph[v])
+                pvinfo = self.hash_(p_graph[pv])
+                if vinfo != pvinfo:
+                    return True
             # 未发现冲突
             return False
+            
+        # waiting_list: 经过初步筛选之后的可能的点映射的集合
+        waiting_list = set()
+        for pattern_v, pattern_info in pattern_graph.items():
+            for v, info in graph.items():
+                # 可能的映射: 
+                # 必要条件1: 类型相同 and 必要条件2: 原图的出度>= pattern中的出度 
+                if info['type'] == pattern_info['type'] and len(info['edges']) >= len(pattern_info['edges']):
+                    # 必要条件3: pattern中每一个relation的名字都必须被包含
+                    relation_names = [ e['name'] for e in info['edges']]
+                    flag = True
+                    for edge in pattern_info['edges']:
+                        if edge['name'] in relation_names:
+                            relation_names.remove(edge['name'] )
+                        else:
+                            flag = False
+                            break
+                    # v --> pattern_v 是一个可能的映射
+                    if flag is True:
+                        waiting_list.add((v,pattern_v))
         
         r = len(pattern_graph) # 模板的点的数目
         # matches 中的 每一个 match 都是一组完整的匹配
@@ -283,6 +276,7 @@ class Main_Graph(Basic_Graph):
 
         return matches
 
+
     # 递归会爆栈 用循环
     def dfs(self):
         stack = [self.graph]
@@ -303,28 +297,7 @@ class Main_Graph(Basic_Graph):
                         stack.append(self.graph)
                         self.graph = copy.deepcopy(prev_graph)
         return False
-    '''
-    # recursion version
-    def dfs(self):
-        # 把图信息压缩到一个字符串，方便比较是否已经到达过该状态
-        prev_hash = self.hash_(self.graph) 
-        if prev_hash not in self.visited:
-            # 存一下当前的图，用于回溯
-            prev = copy.deepcopy(self.graph)    
-            self.visited.add(prev_hash)
-
-            for rule in self.rules:
-                matches = self.match_rule(rule)
-                for match in matches:
-                    self.apply_rule(rule, match)
-                    if self.match_goal(self.goal):
-                        return True
-                    if self.dfs() == True:
-                        return True
-                    # 说明该分支未能达成goal，需要回溯。把改过的图复原
-                    self.graph = copy.deepcopy(prev)
-        return False
-    '''
+ 
     def bfs(self):
         pass
 
@@ -336,7 +309,7 @@ if __name__ == '__main__':
     dir_name = 'examples/Hanoi'
     goal_json = open(dir_name + '/goal.json').read()
     rules_json = open(dir_name + '/rules.json').read()
-    instance_json = open(dir_name + '/instances/' + '7disks_4rods.json').read()
+    instance_json = open(dir_name + '/instances/' + '10disks_3rods.json').read()
 
     # 读取 goal.json 文件
     goal = json.loads(goal_json)

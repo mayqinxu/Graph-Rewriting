@@ -21,7 +21,7 @@ def loop(instance_name):
 
     if graph.dfs():
         print("--- %s seconds ---" % (time.time() - start_time))
-        print('success\nfinal state:\n', graph)
+        print('success\n')#final state:\n', graph)
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         print('fail')

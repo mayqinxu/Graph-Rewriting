@@ -1,0 +1,116 @@
+{
+    "objects": [
+        {
+            "id": "goal",
+            "type": "Goal_Rod"
+        },
+        {
+            "id": "disk_0",
+            "type": "Disk"
+        },
+        {
+            "id": "disk_1",
+            "type": "Disk"
+        },
+        {
+            "id": "disk_2",
+            "type": "Disk"
+        },
+        {
+            "id": "disk_3",
+            "type": "Disk"
+        },
+        {
+            "id": "rod_0",
+            "type": "Rod"
+        },
+        {
+            "id": "rod_1",
+            "type": "Rod"
+        },
+        {
+            "id": "rod_2",
+            "type": "Rod"
+        },
+        {
+            "id": "rod_3",
+            "type": "Rod"
+        },
+        {
+            "id": "rod_4",
+            "type": "Rod"
+        }
+    ],
+    "relations": [
+        {
+            "source": "rod_0",
+            "target": "goal",
+            "type": "rod_is_not_goal"
+        },
+        {
+            "source": "rod_1",
+            "target": "goal",
+            "type": "rod_is_not_goal"
+        },
+        {
+            "source": "rod_2",
+            "target": "goal",
+            "type": "rod_is_not_goal"
+        },
+        {
+            "source": "rod_3",
+            "target": "goal",
+            "type": "rod_is_not_goal"
+        },
+        {
+            "source": "disk_3",
+            "target": "rod_0",
+            "type": "disk_on_rod"
+        },
+        {
+            "source": "disk_0",
+            "target": "disk_1",
+            "type": "disk_on_disk"
+        },
+        {
+            "source": "disk_1",
+            "target": "disk_2",
+            "type": "disk_on_disk"
+        },
+        {
+            "source": "disk_2",
+            "target": "disk_3",
+            "type": "disk_on_disk"
+        },
+        {
+            "source": "disk_0",
+            "target": "disk_1",
+            "type": "disk_is_smaller_than"
+        },
+        {
+            "source": "disk_0",
+            "target": "disk_2",
+            "type": "disk_is_smaller_than"
+        },
+        {
+            "source": "disk_0",
+            "target": "disk_3",
+            "type": "disk_is_smaller_than"
+        },
+        {
+            "source": "disk_1",
+            "target": "disk_2",
+            "type": "disk_is_smaller_than"
+        },
+        {
+            "source": "disk_1",
+            "target": "disk_3",
+            "type": "disk_is_smaller_than"
+        },
+        {
+            "source": "disk_2",
+            "target": "disk_3",
+            "type": "disk_is_smaller_than"
+        }
+    ]
+}
