@@ -29,7 +29,7 @@ graph = {
 }
 '''
 class Basic_Graph:
-    # 存储图结构，包含一个字典self.graph，其中存储了顶点和边的信息，格式可以参照上面
+    # 存储图结构，包含一个字典self.graph，其中存储了顶点和边的信息，格式可以参照上面的注释内容
     # graph, rules, goal 都从这个类衍生
     def __init__(self, objects, relations):
         self.graph = {}
@@ -47,7 +47,7 @@ class Basic_Graph:
             source = relation['source']
             target = relation['target']
             name = relation['type']
-            # edges 中的每一条边 edge 都包含了他的名字 和 另一个端点的名字的信息
+            # edges 中的每一条边 edge 都包含了他的名字 和 另一个断点的名字的信息
             self.graph[source]['edges'].append({'name': name, 'to': target})
     def __str__(self):
         # 用于最后打印结果
@@ -72,7 +72,7 @@ class Rule:
     # Rule 对象，包含了id，lhs，rhs，nacs等部分
     def __init__(self, rule):
         self.id = rule['id']
-        # 因为relations、nacs是可选的，所以不一定有，如果没有就用空的list[]
+        # 因为relations是可选的，所以不一定有relations，如果没有就用空的list[]
         self.lhs = Basic_Graph(rule['lhs']['objects'], rule['lhs'].get('relations', []))
         self.rhs = Basic_Graph(rule['rhs']['objects'], rule['rhs'].get('relations', []))
         self.nacs = [Basic_Graph(nac.get('objects', []), nac.get('relations', [])) for nac in rule.get('nacs', [])]
@@ -283,6 +283,28 @@ class Main_Graph(Basic_Graph):
 
         return matches
 
+    # 递归会爆栈 用循环
+    def dfs(self):
+        stack = [self.graph]
+        while stack:
+            prev_graph = stack.pop()
+            prev_hash = self.hash_(prev_graph) 
+            if prev_hash not in self.visited:
+                self.visited.add(prev_hash)
+                self.graph = copy.deepcopy(prev_graph)
+
+                # 把儿子 入栈 
+                for rule in self.rules:
+                    matches = self.match_rule(rule)
+                    for match in matches:
+                        self.apply_rule(rule, match)
+                        if self.match_goal(self.goal):
+                            return True
+                        stack.append(self.graph)
+                        self.graph = copy.deepcopy(prev_graph)
+        return False
+    '''
+    # recursion version
     def dfs(self):
         # 把图信息压缩到一个字符串，方便比较是否已经到达过该状态
         prev_hash = self.hash_(self.graph) 
@@ -302,7 +324,7 @@ class Main_Graph(Basic_Graph):
                     # 说明该分支未能达成goal，需要回溯。把改过的图复原
                     self.graph = copy.deepcopy(prev)
         return False
-
+    '''
     def bfs(self):
         pass
 
@@ -314,7 +336,7 @@ if __name__ == '__main__':
     dir_name = 'examples/Hanoi'
     goal_json = open(dir_name + '/goal.json').read()
     rules_json = open(dir_name + '/rules.json').read()
-    instance_json = open(dir_name + '/instances/' + 'trivial.json').read()
+    instance_json = open(dir_name + '/instances/' + '5disks_5rods.json').read()
 
     # 读取 goal.json 文件
     goal = json.loads(goal_json)
