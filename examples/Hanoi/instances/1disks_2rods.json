@@ -1,0 +1,32 @@
+{
+    "objects": [
+        {
+            "id": "goal",
+            "type": "Goal_Rod"
+        },
+        {
+            "id": "disk_0",
+            "type": "Disk"
+        },
+        {
+            "id": "rod_0",
+            "type": "Rod"
+        },
+        {
+            "id": "rod_1",
+            "type": "Rod"
+        }
+    ],
+    "relations": [
+        {
+            "source": "rod_0",
+            "target": "goal",
+            "type": "rod_is_not_goal"
+        },
+        {
+            "source": "disk_0",
+            "target": "rod_0",
+            "type": "disk_on_rod"
+        }
+    ]
+}
