@@ -29,7 +29,7 @@ graph = {
 }
 '''
 class Basic_Graph:
-    # 存储图结构，包含一个字典self.graph，其中存储了顶点和边的信息，格式可以参照上面的注释内容
+    # 存储图结构，包含一个字典self.graph，其中存储了顶点和边的信息，格式可以参照上面
     # graph, rules, goal 都从这个类衍生
     def __init__(self, objects, relations):
         self.graph = {}
@@ -47,7 +47,7 @@ class Basic_Graph:
             source = relation['source']
             target = relation['target']
             name = relation['type']
-            # edges 中的每一条边 edge 都包含了他的名字 和 另一个断点的名字的信息
+            # edges 中的每一条边 edge 都包含了他的名字 和 另一个端点的名字的信息
             self.graph[source]['edges'].append({'name': name, 'to': target})
     def __str__(self):
         # 用于最后打印结果
@@ -72,7 +72,7 @@ class Rule:
     # Rule 对象，包含了id，lhs，rhs，nacs等部分
     def __init__(self, rule):
         self.id = rule['id']
-        # 因为relations是可选的，所以不一定有relations，如果没有就用空的list[]
+        # 因为relations、nacs是可选的，所以不一定有，如果没有就用空的list[]
         self.lhs = Basic_Graph(rule['lhs']['objects'], rule['lhs'].get('relations', []))
         self.rhs = Basic_Graph(rule['rhs']['objects'], rule['rhs'].get('relations', []))
         self.nacs = [Basic_Graph(nac.get('objects', []), nac.get('relations', [])) for nac in rule.get('nacs', [])]
@@ -182,7 +182,6 @@ class Main_Graph(Basic_Graph):
 
     def match_nac(self, match, nac, lhs):
         # 匹配 nac，考虑到lhs和nac中名字相同的点必须是相同的，这里把这一部分点先挑出来
-        matched_v = {pair[0] for pair in match}
         # 求交集
         pv_in_both_nac_lhs = set(nac.graph.keys()).intersection(lhs.graph.keys())
         intersect_tuples = {(pair[0], pair[1]) for pair in match if pair[1] in pv_in_both_nac_lhs}
