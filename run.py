@@ -1,4 +1,5 @@
 import os, hashlib, json, itertools, sys, time
+from collections import deque
 from random import randint
 
 '''
@@ -71,6 +72,7 @@ class Goal:
 
 class Rule:
     # Rule 对象，包含了id，lhs，rhs，nacs等部分
+    # lhs, rhs, nac 都是Basic_Graph对象
     def __init__(self, rule):
         self.id = rule['id']
         # 因为relations是可选的，所以不一定有relations，如果没有就用空的list[]
@@ -113,7 +115,9 @@ class Main_Graph(Basic_Graph):
         return good_matches
 
     def apply_rule(self, rule, match):
-        # 参数中的 match 是一组满足条件的点之间的映射，即从原图 到 lhs 的一个点映射
+        # 参数
+        # rule: 将要apply 的rule
+        # match: 是一组满足条件的点之间的映射，即从原图 到 lhs 的一个点映射
         mapping = {}
         for pair in match:
             mapping[pair[1]] = pair[0]
@@ -155,7 +159,7 @@ class Main_Graph(Basic_Graph):
         for v, info in rule.rhs.graph.items():
             # 增加边
             if v not in rule.lhs.graph.keys():
-                # 如果有一些点是之前新加的，把它对应的边加上
+                # 如果有一些点是之前新加的，把它的出边全部加上
                 for edge in info['edges']:
                     from_v = mapping[v]
                     to_v = mapping[edge['to']]
@@ -164,7 +168,7 @@ class Main_Graph(Basic_Graph):
                 continue
 
             for edge in info['edges']:
-                # 查找 lhs中没有，但是 rhs中有的边
+                # 查找要增加的边
                 flag = False
                 for r_edge in rule.lhs.graph[v]['edges']:
                     if r_edge == edge:
@@ -185,37 +189,14 @@ class Main_Graph(Basic_Graph):
         intersect_tuples = {(pair[0], pair[1]) for pair in match if pair[1] in pv_in_both_nac_lhs}
         res = self.match_graph(self.graph, nac.graph, intersect_tuples)
         return bool(res)
-    
-    def get_subgraph(self, graph, vertexs):
-        # 求 graph 限制在 vertexs 顶点集中的子图
-        subgraph = {}
-        for v, info in graph.items():
-            if v in vertexs:
-                subgraph[v] = {'type': info['type'], 'edges': []}
-
-                for edge in info['edges']:
-                    if edge['to'] in vertexs:
-                        subgraph[v]['edges'].append(edge)
-        return subgraph
-
-    def deepcopy_dict(self, dic):
-        # 深拷贝
-        # python 自带的深拷贝函数太慢了，还不如自己遍历一遍
-        new_dict = {}
-        for v, info in dic.items():
-            edges = []
-            for edge in info['edges']:
-                edges.append({'name': edge['name'], 'to': edge['to']})
-            new_dict[v] = {'type': info['type'], 'edges': edges}
-        return new_dict
 
     def match_graph(self, graph, pattern_graph, must_match_pairs = set()):
         # 匹配同构子图
         # 参数：
         # graph: 待匹配的图
-        # pattern_graph: 匹配的模板图，即从graph中，找到所有与pattern_graph同构的子图
+        # pattern_graph: 匹配的模板图，即要从graph中，找到所有与pattern_graph同构的子图
         # must_match_pairs: 用于nac的查找，如果nac与lhs中有相同的元素，那么在匹配nac时，
-        #                   已经找到的match中的这些元素必须参与匹配，缺省时为空集
+        #                   这些元素必须参与匹配，缺省时为空集
         def check_violate(possible_match, vs):
             # 参数：
             # possible_match: 一个可能匹配的完整的映射，需要检验它们是否存在冲突
@@ -294,10 +275,12 @@ class Main_Graph(Basic_Graph):
         stack = [self.graph]
         while stack:
             prev_graph = stack.pop()
+            # 判断是否之前遍历过这个状态
             prev_hash = self.hash_(prev_graph) 
             if prev_hash not in self.visited:
                 self.visited.add(prev_hash)
                 self.graph = self.deepcopy_dict(prev_graph)
+                # 应用rules，得到遍历的子节点，将其入栈
                 for rule in self.rules:
                     matches = self.match_rule(rule)
                     for match in matches:
@@ -309,17 +292,60 @@ class Main_Graph(Basic_Graph):
         return False
  
     def bfs(self):
-        pass
+        que = deque([self.graph])
+        while que:
+            prev_graph = que.popleft()
+            # 判断是否之前遍历过这个状态
+            prev_hash = self.hash_(prev_graph) 
+            if prev_hash not in self.visited:
+                self.visited.add(prev_hash)
+                self.graph = self.deepcopy_dict(prev_graph)
+                # 应用rules，得到遍历的子节点，将其入栈
+                for rule in self.rules:
+                    matches = self.match_rule(rule)
+                    for match in matches:
+                        self.apply_rule(rule, match)
+                        if self.match_goal(self.goal):
+                            return True
+                        que.append(self.graph)
+                        self.graph = self.deepcopy_dict(prev_graph)
+        return False
 
+    ############################ 以下是一些辅助函数
     def hash_(self, a):
         # get a unique id for a dictionary
         return(hashlib.sha1(json.dumps(a, sort_keys=True).encode('utf-8')).hexdigest())
+    def get_subgraph(self, graph, vertexs):
+        # 求 graph 限制在 vertexs 顶点集中的子图
+        subgraph = {}
+        for v, info in graph.items():
+            if v in vertexs:
+                subgraph[v] = {'type': info['type'], 'edges': []}
+
+                for edge in info['edges']:
+                    if edge['to'] in vertexs:
+                        subgraph[v]['edges'].append(edge)
+        return subgraph
+
+    def deepcopy_dict(self, dic):
+        # 深拷贝
+        # python 自带的深拷贝函数太慢了，不如自己遍历一遍
+        new_dict = {}
+        for v, info in dic.items():
+            edges = []
+            for edge in info['edges']:
+                edges.append({'name': edge['name'], 'to': edge['to']})
+            new_dict[v] = {'type': info['type'], 'edges': edges}
+        return new_dict
 
 if __name__ == '__main__':
     dir_name = 'examples/Hanoi'
-    goal_json = open(dir_name + '/goal.json').read()
-    rules_json = open(dir_name + '/rules.json').read()
-    instance_json = open(dir_name + '/instances/' + '10disks_4rods.json').read()
+    with open(dir_name + '/goal.json') as f:
+        goal_json = f.read()
+    with open(dir_name + '/rules.json') as f:
+        rules_json = f.read()
+    with open(dir_name + '/instances/' + '10disks_4rods.json') as f:
+        instance_json = f.read()
 
     # 读取 goal.json 文件
     goal = json.loads(goal_json)

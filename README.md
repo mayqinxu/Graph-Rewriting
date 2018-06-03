@@ -2,14 +2,14 @@
 算分2018小班课赵海燕老师班课程项目
 
 ## Update
-一个naive的实现，
+一个naive的实现
 直接运行`run.py` 是运行单个问题的实例。 具体是哪个问题要去main函数里面手动改 23333
 `generate_hanoi_instance.py`用于生成一系列Hanoi问题的instance，具体的盘子和杆子的数目范围可以去里面改
 `hanoi_compare.py ` 会把instance里面所有的实例跑一遍
 
 待优化：
 
-现在在匹配rule的时候是先匹配lhs，再匹配nac，相当于两次匹配，不知道有没有优化方式
+现在在匹配rule的时候是先匹配lhs，再匹配nac，相当于两次匹配，求优化
 
 ## 项目结构
 - `examlpes`：问题集合
