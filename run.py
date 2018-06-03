@@ -1,4 +1,4 @@
-import os, copy, hashlib, json, itertools, sys, time
+import os, hashlib, json, itertools, sys, time
 from random import randint
 
 '''
@@ -187,7 +187,7 @@ class Main_Graph(Basic_Graph):
         return bool(res)
     
     def get_subgraph(self, graph, vertexs):
-        # 求graph限制在 vertexs 顶点集中的子图
+        # 求 graph 限制在 vertexs 顶点集中的子图
         subgraph = {}
         for v, info in graph.items():
             if v in vertexs:
@@ -198,35 +198,42 @@ class Main_Graph(Basic_Graph):
                         subgraph[v]['edges'].append(edge)
         return subgraph
 
+    def deepcopy_dict(self, dic):
+        # 深拷贝
+        # python 自带的深拷贝函数太慢了，还不如自己遍历一遍
+        new_dict = {}
+        for v, info in dic.items():
+            edges = []
+            for edge in info['edges']:
+                edges.append({'name': edge['name'], 'to': edge['to']})
+            new_dict[v] = {'type': info['type'], 'edges': edges}
+        return new_dict
+
     def match_graph(self, graph, pattern_graph, must_match_pairs = set()):
+        # 匹配同构子图
         # 参数：
         # graph: 待匹配的图
         # pattern_graph: 匹配的模板图，即从graph中，找到所有与pattern_graph同构的子图
         # must_match_pairs: 用于nac的查找，如果nac与lhs中有相同的元素，那么在匹配nac时，
         #                   已经找到的match中的这些元素必须参与匹配，缺省时为空集
-        def check_violate(possible_match):
-            # 参数：一个可能的完整的映射，检验它们是否存在冲突
-            # 方法：直接选取子图，然后哈希，与模板比较。
-            vs = []
-            pvs = []
-            for pair in possible_match:
-                vs.append(pair[0])
-                pvs.append(pair[1])
+        def check_violate(possible_match, vs):
+            # 参数：
+            # possible_match: 一个可能匹配的完整的映射，需要检验它们是否存在冲突
+            # vs: 顶点的限制
+            # 方法：直接选取限制在vs上的子图，然后哈希，与模板比较。
 
-            if len(set(vs)) < len(vs) or len(set(pvs)) < len(pvs):
-                # 不能有重复的点, 因为必须是一一对应的
-                return True
-
+            # mapping 是从模板顶点 到 原图的顶点的映射
             mapping = {}
             for pair in possible_match:
                 mapping[pair[1]] = pair[0]
-
+            # 获取子图
             subgraph = self.get_subgraph(self.graph, vs)
-            p_graph = copy.deepcopy(pattern_graph)
+            p_graph = self.deepcopy_dict(pattern_graph)
+            # 把模板中的顶点的名字 换成原图中的名字，以进行哈希比较
             for pv, pvinfo in p_graph.items():
                 for edge in pvinfo['edges']:
                     edge['to'] = mapping[edge['to']]
-            # 直接比较子图和模板哈希值是否相等
+            # 直接比较两个图哈希值是否相等
             for pv in pvs:
                 v = mapping[pv]
                 vinfo = self.hash_(subgraph[v])
@@ -257,8 +264,7 @@ class Main_Graph(Basic_Graph):
                         waiting_list.add((v,pattern_v))
         
         r = len(pattern_graph) # 模板的点的数目
-        # matches 中的 每一个 match 都是一组完整的匹配
-        matches = []
+
         if must_match_pairs:
             # 如果有必须参加匹配的点对，那么就从waiting_list里面把与它们名字相同的都去掉。因为是双射。
             new_waiting_list = set()
@@ -269,9 +275,15 @@ class Main_Graph(Basic_Graph):
                 new_waiting_list.add(pair)
             waiting_list = new_waiting_list
 
+        # matches 中的 每一个 match 都是一组成功的匹配
+        matches = []
         # 从waiting_list中，选取所有可能的 r 个顶点的 组合，进行验证，验证它们之间所有的边的关系是否不冲突
         for possible_match in itertools.combinations(waiting_list, r):
-            if not check_violate(possible_match):
+            vs, pvs = map(list, zip(*possible_match))
+            if len(set(vs)) < len(vs) or len(set(pvs)) < len(pvs):
+                # 不能有重复的点, 因为必须是一一对应的
+                continue
+            if not check_violate(possible_match, vs):
                 matches.append(possible_match)
 
         return matches
@@ -285,9 +297,7 @@ class Main_Graph(Basic_Graph):
             prev_hash = self.hash_(prev_graph) 
             if prev_hash not in self.visited:
                 self.visited.add(prev_hash)
-                self.graph = copy.deepcopy(prev_graph)
-
-                # 把儿子 入栈 
+                self.graph = self.deepcopy_dict(prev_graph)
                 for rule in self.rules:
                     matches = self.match_rule(rule)
                     for match in matches:
@@ -295,7 +305,7 @@ class Main_Graph(Basic_Graph):
                         if self.match_goal(self.goal):
                             return True
                         stack.append(self.graph)
-                        self.graph = copy.deepcopy(prev_graph)
+                        self.graph = self.deepcopy_dict(prev_graph)
         return False
  
     def bfs(self):
@@ -309,7 +319,7 @@ if __name__ == '__main__':
     dir_name = 'examples/Hanoi'
     goal_json = open(dir_name + '/goal.json').read()
     rules_json = open(dir_name + '/rules.json').read()
-    instance_json = open(dir_name + '/instances/' + '10disks_3rods.json').read()
+    instance_json = open(dir_name + '/instances/' + '10disks_4rods.json').read()
 
     # 读取 goal.json 文件
     goal = json.loads(goal_json)
