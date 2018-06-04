@@ -25,8 +25,8 @@ def loop(instance_name):
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         print('fail')
+    print("total rules applied : ", graph.comp_time)
 
-sys.setrecursionlimit(1500)
 for root, dirs, files in os.walk('./examples/Hanoi/instances'):
     files.sort()
     for name in files:

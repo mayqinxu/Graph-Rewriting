@@ -94,13 +94,13 @@ class Main_Graph(Basic_Graph):
         # 如果任意一个 nac 被匹配，就没有成功
         for nac in goal.nacs:
             match_nac = self.match_graph(self.graph, nac.graph)
-            if match_nac != []:
-                return False#, len(match_nac)
+            if match_nac :
+                return False, len(match_nac)
         # 如果 goal.graph 为空，说明已经达成了goal
         if not goal.graph:
-            return True#, 0
+            return True, 0
         # 否则需要检查是否满足graph
-        return bool(self.match_graph(self.graph, goal.graph))
+        return bool(self.match_graph(self.graph, goal.graph)), 0
 
     def match_rule(self, rule):
         matches = self.match_graph(self.graph, rule.lhs.graph)
@@ -281,16 +281,22 @@ class Main_Graph(Basic_Graph):
                     matches = self.match_rule(rule)
                     for match in matches:
                         self.apply_rule(rule, match)
-                        if self.match_goal(self.goal):
+                        if self.match_goal(self.goal)[0]:
                             return True
                         stack.append(self.graph)
                         self.graph = self.deepcopy_dict(prev_graph)
         return False
  
     def bfs(self):
-        que = deque([self.graph])
-        while que:
-            prev_graph = que.popleft()
+        que = Q.PriorityQueue()
+        success, nac_cnt = self.match_goal(self.goal)
+        if success:
+            return True
+
+        que.put(PriorityEntry(-nac_cnt, self.graph))
+
+        while not que.empty():
+            prev_graph = que.get().graph
             # 判断是否之前遍历过这个状态
             prev_hash = self.hash_(prev_graph) 
             if prev_hash not in self.visited:
@@ -302,9 +308,11 @@ class Main_Graph(Basic_Graph):
                     for match in matches:
                         self.apply_rule(rule, match)
                         self.comp_time += 1
-                        if self.match_goal(self.goal):
+                        success, nac_cnt = self.match_goal(self.goal)
+                        if success:
                             return True
-                        que.append(self.graph)
+                        else :
+                            que.put(PriorityEntry(-nac_cnt, self.graph))
                         self.graph = self.deepcopy_dict(prev_graph)
         return False
 
@@ -335,13 +343,22 @@ class Main_Graph(Basic_Graph):
             new_dict[v] = {'type': info['type'], 'edges': edges}
         return new_dict
 
+class PriorityEntry():
+
+    def __init__(self, priority, graph):
+        self.graph = graph
+        self.priority = priority
+
+    def __lt__(self, other):
+        return self.priority < other.priority
+
 if __name__ == '__main__':
     dir_name = 'examples/Hanoi'
     with open(dir_name + '/goal.json') as f:
         goal_json = f.read()
     with open(dir_name + '/rules.json') as f:
         rules_json = f.read()
-    with open(dir_name + '/instances/' + '7disks_3rods.json') as f:
+    with open(dir_name + '/instances/' + '5disks_3rods.json') as f:
         instance_json = f.read()
 
     # 读取 goal.json 文件
@@ -355,11 +372,11 @@ if __name__ == '__main__':
     graph = Main_Graph(graph['objects'], graph.get('relations', []), goal, rules)
     start_time = time.time()
 
-    if graph.dfs():
+    if graph.bfs():
         print("--- %s seconds ---" % (time.time() - start_time))
         print('success\nfinal state:\n', graph)
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         print('fail')
-    print(graph.comp_time)
+    print(len(graph.visited))
 
