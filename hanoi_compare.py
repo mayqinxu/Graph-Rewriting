@@ -16,12 +16,12 @@ def loop(instance_name):
     # 读取 instance/trivial.json 文件
     graph = json.loads(instance_json)
     graph = Main_Graph(graph['objects'], graph.get('relations', []), goal, rules)
-    print(instance_name, '\n')
+    print(instance_name)
     start_time = time.time()
 
     if graph.dfs():
         print("--- %s seconds ---" % (time.time() - start_time))
-        print('success\n')#final state:\n', graph)
+        print('success\nfinal state:\n', graph)
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         print('fail')

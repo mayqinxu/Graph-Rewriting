@@ -95,10 +95,10 @@ class Main_Graph(Basic_Graph):
         for nac in goal.nacs:
             match_nac = self.match_graph(self.graph, nac.graph)
             if match_nac != []:
-                return False#, len(match_nac)
+                return False
         # 如果 goal.graph 为空，说明已经达成了goal
         if not goal.graph:
-            return True#, 0
+            return True
         # 否则需要检查是否满足graph
         return bool(self.match_graph(self.graph, goal.graph))
 
@@ -274,13 +274,13 @@ class Main_Graph(Basic_Graph):
             prev_hash = self.hash_(prev_graph) 
             if prev_hash not in self.visited:
                 self.visited.add(prev_hash)
-                self.comp_time += 1
                 self.graph = self.deepcopy_dict(prev_graph)
                 # 应用rules，得到遍历的子节点，将其入栈
                 for rule in self.rules:
                     matches = self.match_rule(rule)
                     for match in matches:
                         self.apply_rule(rule, match)
+                        self.comp_time += 1
                         if self.match_goal(self.goal):
                             return True
                         stack.append(self.graph)
@@ -355,11 +355,11 @@ if __name__ == '__main__':
     graph = Main_Graph(graph['objects'], graph.get('relations', []), goal, rules)
     start_time = time.time()
 
-    if graph.dfs():
+    if graph.bfs():
         print("--- %s seconds ---" % (time.time() - start_time))
-        print('success\nfinal state:\n', graph)
+        print('success\n')#final state:\n', graph)
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         print('fail')
-    print(graph.comp_time)
+    print('total rules applied: ', graph.comp_time)
 

@@ -274,13 +274,13 @@ class Main_Graph(Basic_Graph):
             prev_hash = self.hash_(prev_graph) 
             if prev_hash not in self.visited:
                 self.visited.add(prev_hash)
-                self.comp_time += 1
                 self.graph = self.deepcopy_dict(prev_graph)
                 # 应用rules，得到遍历的子节点，将其入栈
                 for rule in self.rules:
                     matches = self.match_rule(rule)
                     for match in matches:
                         self.apply_rule(rule, match)
+                        self.comp_time += 1
                         if self.match_goal(self.goal)[0]:
                             return True
                         stack.append(self.graph)
@@ -293,7 +293,7 @@ class Main_Graph(Basic_Graph):
         if success:
             return True
 
-        que.put(PriorityEntry(-nac_cnt, self.graph))
+        que.put(PriorityEntry(nac_cnt, self.graph))
 
         while not que.empty():
             prev_graph = que.get().graph
@@ -302,7 +302,7 @@ class Main_Graph(Basic_Graph):
             if prev_hash not in self.visited:
                 self.visited.add(prev_hash)
                 self.graph = self.deepcopy_dict(prev_graph)
-                # 应用rules，得到遍历的子节点，将其入栈
+                # 应用rules，得到遍历的子节点，将其入队
                 for rule in self.rules:
                     matches = self.match_rule(rule)
                     for match in matches:
@@ -312,7 +312,7 @@ class Main_Graph(Basic_Graph):
                         if success:
                             return True
                         else :
-                            que.put(PriorityEntry(-nac_cnt, self.graph))
+                            que.put(PriorityEntry(nac_cnt, self.graph))
                         self.graph = self.deepcopy_dict(prev_graph)
         return False
 
@@ -358,7 +358,7 @@ if __name__ == '__main__':
         goal_json = f.read()
     with open(dir_name + '/rules.json') as f:
         rules_json = f.read()
-    with open(dir_name + '/instances/' + '5disks_3rods.json') as f:
+    with open(dir_name + '/instances/' + '7disks_3rods.json') as f:
         instance_json = f.read()
 
     # 读取 goal.json 文件
@@ -374,9 +374,9 @@ if __name__ == '__main__':
 
     if graph.bfs():
         print("--- %s seconds ---" % (time.time() - start_time))
-        print('success\nfinal state:\n', graph)
+        print('success\n')#final state:\n', graph)
     else:
         print("--- %s seconds ---" % (time.time() - start_time))
         print('fail')
-    print(len(graph.visited))
+    print('total rules applied : ', graph.comp_time)
 
